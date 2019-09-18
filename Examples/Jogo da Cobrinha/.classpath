@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/HiperespGamePlatform.jar" sourcepath="/HiperespGamePlatform"/>
+	<classpathentry kind="lib" path="lib/HiperespGamePlatform.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

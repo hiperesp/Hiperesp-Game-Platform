@@ -58,7 +58,7 @@ public class Pipe implements GameElement {
 		}
 	}
 	public void render() {
-		Graphics2D graphics = game.graphics;
+		Graphics2D graphics = (Graphics2D) game.graphics;
 		int xt = x;
 		int yt = (int)(y-imageT.getHeight()-gap/2);
 		int xd = x;

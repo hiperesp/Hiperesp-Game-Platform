@@ -51,7 +51,7 @@ public class Bird implements GameElement {
 		}
 	}
 	public void render() {
-		Graphics2D graphics = game.graphics;
+		Graphics2D graphics = (Graphics2D) game.graphics;
 		if(game.debug_mode==MyGame.DEBUG_ON) {
 			graphics.drawRect(x, y, image.getWidth(), image.getHeight());
 		}
@@ -74,12 +74,10 @@ public class Bird implements GameElement {
 		gravityOffset = -6;
 	}
 	public void calculateCollision() {
-		if(isCollidingWithPipes()) {
-			game.status = MyGame.DIE;
-			x-=game.pipeSpeed;//getCollidePipe().speed_acc;
-		}
-		if(isCollidingWithBottom()) {
-			game.status = MyGame.DIE;
+		if(isCollidingWithBottom()||isCollidingWithPipes()) {
+			if(!(game.status==MyGame.DIE||game.status==MyGame.FAST_DIE)) {
+				game.status = MyGame.DIE;
+			}
 			x-=game.pipeSpeed;
 		}
 		if(isCollidingWithTop()) {

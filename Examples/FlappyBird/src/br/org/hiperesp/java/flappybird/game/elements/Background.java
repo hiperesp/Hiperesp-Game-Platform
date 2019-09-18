@@ -28,7 +28,7 @@ public class Background implements GameElement {
 		if(offsetX<-image.getWidth()) offsetX+=image.getWidth();
 	}
 	public void render() {
-		Graphics2D graphics = game.graphics;
+		Graphics2D graphics = (Graphics2D) game.graphics;
 		int width = (int)((float)((float)image.getWidth()/(float)image.getHeight())*game.getHeight());
 		int height = game.getHeight();
 		int x = (int)((float)width/(float)image.getWidth()*(float)offsetX);
@@ -41,5 +41,10 @@ public class Background implements GameElement {
 				 graphics.drawImage(image, xI, 0, width, height, null);
 			}
 		}
+	}
+	@Override
+	public void setup() {
+		// TODO Auto-generated method stub
+		
 	}
 }

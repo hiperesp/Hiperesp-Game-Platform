@@ -28,7 +28,7 @@ public class Foreground implements GameElement {
 		if(offsetX<-image.getWidth()) offsetX+=image.getWidth();
 	}
 	public void render() {
-		Graphics2D graphics = game.graphics;
+		Graphics2D graphics = (Graphics2D) game.graphics;
 		int foregroundsToRender = 2+game.getWidth()/image.getWidth();
 		int y = game.getHeight()-image.getHeight();
 		int width = image.getWidth();
@@ -41,5 +41,10 @@ public class Foreground implements GameElement {
 				 graphics.drawImage(image, x, y, width, height, null);
 			}
 		}
+	}
+	@Override
+	public void setup() {
+		// TODO Auto-generated method stub
+		
 	}
 }

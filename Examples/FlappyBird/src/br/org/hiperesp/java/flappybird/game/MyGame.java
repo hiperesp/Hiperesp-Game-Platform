@@ -43,10 +43,7 @@ public class MyGame extends Game implements KeyListener {
 	
 	private long lastNanoTime = 0;
 	
-	public MyGame() throws IOException, FontFormatException {
-		//setFPS(140);
-		frameDelayMs = 0l;
-		frameDelayNs = 1;
+	public MyGame() throws InterruptedException, IOException, FontFormatException {
 		background = new Background(this);
 		pipeList = new PipeList(this);
 		bird = new Bird(this);
@@ -100,4 +97,10 @@ public class MyGame extends Game implements KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {}
+
+	@Override
+	public void setup() {
+		// TODO Auto-generated method stub
+		
+	}
 }
